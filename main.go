@@ -58,6 +58,15 @@ const (
 var (
 	LISTEN_PORT                = 3000  // Can be overwritten with the LISTEN_PORT env var
 	PROMETHEUS_PORT            = 30000  // Can be overwritten with the PROMETHEUS_PORT env var
+	
+	numProcessed               = 0
+	startTime                  = time.Now()
+	totalRequestsCounter       prometheus.Counter
+	invalidRequestsCounter     prometheus.Counter
+	objsProcessedCounterVector *prometheus.CounterVec
+	resultLangCounterVector    *prometheus.CounterVec
+	requestDurationCounter     prometheus.Counter
+	errorsCounter              prometheus.Counter
 
 	notFound       []byte
 	usage          []byte
