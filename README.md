@@ -4,9 +4,13 @@ A JSON/HTTP service.
 
 Takes input text and tries to determine the language. Uses cld2: https://github.com/CLD2Owners/cld2.git
 
+# How to Build
+
+Checkout Dockerfile
+
 # How to Run
 
-    $ ./oh-augmentation-language-detector
+    $ ./language-detector
 
 Here is an example request:
 
