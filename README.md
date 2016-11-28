@@ -4,6 +4,8 @@ A JSON/HTTP service.
 
 Takes input text and tries to determine the language. Uses cld2: https://github.com/CLD2Owners/cld2.git
 
+Implements: https://biosphere.cc/software-engineering/natural-language-detection-in-go/
+
 # How to Build
 
 Checkout Dockerfile
