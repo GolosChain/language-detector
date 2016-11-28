@@ -62,7 +62,7 @@ func TestUsage(t *testing.T) {
 	body, err := ioutil.ReadAll(resp.Body)
 	assert.Nil(t, err, "should not error reading response")
 	assert.Equal(t, 200, resp.StatusCode, "response status code should be 200")
-	expected := `{"augmentationProtocolVersion":1.0,"result":{"id":"language-detector","name":"language-detector","description":"Determine language code from text","in":{"text":{"type":"string"}},"out":{"iso6391code":{"type":"string"},"name":{"type":"string"}}}}`
+	expected := `{"result":{"id":"language-detector","name":"language-detector","description":"Determine language code from text","in":{"text":{"type":"string"}},"out":{"iso6391code":{"type":"string"},"name":{"type":"string"}}}}`
 
 	assert.Equal(t, []byte(expected), body, "usage information should match")
 }
