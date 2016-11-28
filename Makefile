@@ -7,7 +7,7 @@ GODEBUG=GOPATH=$(GOPATH) PATH=$(GOPATH)/bin:$$PATH godebug
 
 
 PKG  = . # $(dir $(wildcard ./*)) # uncomment for implicit submodules
-BIN  = oh-augmentation-language-detector
+BIN  = language-detector
 
 FIND_STD_DEPS = $(GO) list std | sort | uniq
 FIND_PKG_DEPS = $(GO) list -f '{{join .Deps "\n"}}' $(PKG) | sort | uniq | grep -v "^_"
