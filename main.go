@@ -19,10 +19,10 @@ import (
 	"time"
 
 	bnLogger "github.com/bottlenose-inc/go-common-tools/logger" // go-common-tools bunyan-style logger package
-	"github.com/bottlenose-inc/go-common-tools/metrics"            // go-common-tools Prometheus metrics package
-	rj "github.com/bottlenose-inc/rapidjson"                // faster json handling
-	"github.com/gorilla/mux"                                // URL router and dispatcher
-	"github.com/prometheus/client_golang/prometheus"        // Prometheus client library
+	"github.com/bottlenose-inc/go-common-tools/metrics"         // go-common-tools Prometheus metrics package
+	rj "github.com/bottlenose-inc/rapidjson"                    // faster json handling
+	"github.com/gorilla/mux"                                    // URL router and dispatcher
+	"github.com/prometheus/client_golang/prometheus"            // Prometheus client library
 )
 
 const (
@@ -31,7 +31,7 @@ const (
 	BODY_LIMIT_BYTES  = 1048576 // Truncates incoming requests to 1 mb
 	OBJECTS_PER_LOG   = 1000    // Number of objects processed per throughput log message
 
-	USAGE_STRING      = `{
+	USAGE_STRING = `{
   "result": {
     "id": "language-detector",
     "name": "language-detector",
@@ -56,9 +56,9 @@ const (
 )
 
 var (
-	LISTEN_PORT                = 3000  // Can be overwritten with the LISTEN_PORT env var
-	PROMETHEUS_PORT            = 30000  // Can be overwritten with the PROMETHEUS_PORT env var
-	
+	LISTEN_PORT     = 3000  // Can be overwritten with the LISTEN_PORT env var
+	PROMETHEUS_PORT = 30000 // Can be overwritten with the PROMETHEUS_PORT env var
+
 	numProcessed               = 0
 	startTime                  = time.Now()
 	totalRequestsCounter       prometheus.Counter
@@ -99,7 +99,7 @@ func main() {
 	go metrics.StartPrometheusMetricsServer(AUGMENTATION_NAME, logger, PROMETHEUS_PORT)
 
 	// Initialize Prometheus Metrics
-    InitMetrics()
+	InitMetrics()
 
 	// Prepare responses
 	GenerateResponses()

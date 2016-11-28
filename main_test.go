@@ -12,7 +12,7 @@ import (
 
 	irukaLogger "github.com/bottlenose-inc/go-common-tools/logger" // go-common-tools bunyan-style logger package
 	"github.com/bottlenose-inc/go-common-tools/metrics"            // go-common-tools Prometheus metrics package
-	"github.com/stretchr/testify/assert"                    // Assertion package
+	"github.com/stretchr/testify/assert"                           // Assertion package
 )
 
 var (
@@ -28,7 +28,7 @@ func TestMain(m *testing.M) {
 
 	// Start Prometheus metrics server and initialize metrics to avoid panic during tests
 	go metrics.StartPrometheusMetricsServer(AUGMENTATION_NAME+"-test", logger, PROMETHEUS_PORT)
-    InitMetrics()
+	InitMetrics()
 
 	// load data file
 	langFile, err := ioutil.ReadFile(LANG_FILE)
