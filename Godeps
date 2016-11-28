@@ -1,0 +1,7 @@
+#Godeps allows gpm to manage go package versions
+#https://github.com/pote/gpm --> forked to github.com/bottlenose-inc/gpm
+
+github.com/bottlenose-inc/go-common-tools/...
+github.com/bottlenose-inc/rapidjson    v1.2.0
+github.com/gorilla/mux                 26a6070f849969ba72b72256e9f14cf519751690 # last commit available on 2/17/16 and no releases on project
+github.com/stretchr/testify/assert     6fe211e493929a8aac0469b93f28b1d0688a9a3a # last commit available on 4/4/16 and last release out of date
